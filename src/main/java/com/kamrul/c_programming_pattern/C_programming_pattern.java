@@ -10,7 +10,7 @@ public class C_programming_pattern {
         System.out.print("Enter any number : ");
         num1 = input.nextInt();
 
-        for (row = 1; row <= num1; row++) {
+        for (row = num1; row >= 1; row--) {
             
             for ( col = 1; col <=num1-row; col++) {
                 System.out.print("  ");  //----------(2)
@@ -29,14 +29,14 @@ public class C_programming_pattern {
         System.out.print("Enter any number : ");
         num2 = input.nextInt();
 
-        for (row = 1; row <= num2; row++) {
+        for (row = num2; row >= 1; row--) {
             
             for ( col=1; col <=num2-row; col++) {
                 System.out.print("  "); //----------(2)
             }
             
             for (col = 1; col <= row; col++) {
-                System.out.printf("%c ", row + 64); //----(1)
+                System.out.printf("%d ", row); //----(1)
             }
             System.out.printf("\n");
         }
@@ -44,7 +44,7 @@ public class C_programming_pattern {
     }
 
     /*
-    উপরোক্ত code দ্বারা Left-side, Triangle pattern design করা হয়েছে।।
+    উপরোক্ত code দ্বারা Left-side down, Triangle pattern design করা হয়েছে।।
     
     Pattern মুলত C_Programming এর অংশ, যদিও এখানে java-তে code করা হয়েছে।।
     এখানে column print করা হয়েছে, row print করতে চাইলে ১নং সমীকরণে col এর পরিবর্তে row লিখুন।।

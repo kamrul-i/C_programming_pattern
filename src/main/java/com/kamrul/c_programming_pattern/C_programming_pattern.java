@@ -5,22 +5,28 @@ public class C_programming_pattern {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        //=========================================
+        //RectAngle column print------------------
         int num, col, row;
         System.out.print("Enter any number : ");
         num = input.nextInt();
         
-        for ( row = 1; row <=num; row++) {
-            for ( col = 1; col <=num; col++) {
-                System.out.print("& "); //--------(1)  //spacial character-এ row/col এর প্রয়োজন নেই।।
+        for (row = 1; row <= num; row++) {
+
+            for (col = 1; col <= num; col++) {
+
+                if (row == 1 || row == num || col == 1 || col == num) {
+                    System.out.printf("%c ", col + 64);  //---------(1)
+                } else {
+                    System.out.print("  ");
+                }
             }
-            System.out.printf("\n");
+            System.out.println();
         }
-        //=========================================
+        //RectAngle column print -------------------
     }
 
     /*
-    উপরোক্ত code দ্বারা Square diamond pattern design. করা হয়েছে।।
+    উপরোক্ত code দ্বারা RectAngle pattern design. করা হয়েছে।।
     
     Pattern মুলত C_Programming এর অংশ, যদিও এখানে java-তে code করা হয়েছে।।
     এখানে column print করা হয়েছে, row print করতে চাইলে ১নং সমীকরণে col এর পরিবর্তে row লিখুন।।

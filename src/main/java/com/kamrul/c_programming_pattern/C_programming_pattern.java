@@ -5,50 +5,54 @@ public class C_programming_pattern {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        //uper pyramid column print....................
+        //Right pyramid column print..............
         int num1, col, row;
         System.out.print("Enter any number : ");
         num1 = input.nextInt();
 
-        for (row = num1; row >= 1; row--) {
+        for (row = 1; row <= num1; row++) {
 
-            for (col = 1; col <= num1 - row; col++) {
-                System.out.print("  "); //--------(2)
-            }
             for (col = 1; col <= row; col++) {
-                System.out.printf("%c ", col + 64); //----(1)
+                System.out.printf("%d ", col % 2); //------(1)
             }
-            for (col = row - 1; col >= 1; col--) {
-                System.out.printf("%c ", col + 64); //----(1)
-            }
-            System.out.println();
+            System.out.printf("\n");
         }
-        System.out.println();
-        //uper pyramid column print end ................
+        //----------------------------------------
+        for (row = num1 - 1; row >= 1; row--) {
 
-        //uper pyramid row print........................
+            for (col = 1; col <= row; col++) {
+                System.out.printf("%d ", col % 2); //------(1)
+            }
+            System.out.printf("\n");
+        }
+        System.out.printf("\n");
+        //Right pyramid column print end.............
+
+        //Right pyramid row print....................
         int num2;
         System.out.print("Enter any number : ");
         num2 = input.nextInt();
 
-        for (row = num2; row >= 1; row--) {
+        for (row = 1; row <= num2; row++) {
 
-            for (col = 1; col <= num2 - row; col++) {
-                System.out.print("  "); //-------(2)
-            }
             for (col = 1; col <= row; col++) {
-                System.out.printf("%c ", row + 96); //--------(1)
+                System.out.printf("%d ", row % 2); //------(1)
             }
-            for (col = row - 1; col >= 1; col--) {
-                System.out.printf("%c ", row + 96); //--------(1)
-            }
-            System.out.println();
+            System.out.printf("\n");
         }
-        //uper pyramid row print end .................
+        //----------------------------------------
+        for (row = num2 - 1; row >= 1; row--) {
+
+            for (col = 1; col <= row; col++) {
+                System.out.printf("%d ", row % 2); //------(1)
+            }
+            System.out.printf("\n");
+        }
+        //Right pyramid row print end.............
     }
     
     /*
-    উপরোক্ত code দ্বারা Pyramid pattern design (down-part) করা হয়েছে।।
+    উপরোক্ত code দ্বারা Pyramid pattern design (right-side) করা হয়েছে।।
     
     Pattern মুলত C_Programming এর অংশ, যদিও এখানে java-তে code করা হয়েছে।।
     এখানে column print করা হয়েছে, row print করতে চাইলে ১নং সমীকরণে col এর পরিবর্তে row লিখুন।।
@@ -60,8 +64,5 @@ public class C_programming_pattern {
         System.out.printf("%c ", col+96); এ line use করে ফলাফলে small character দেখুন।।
         System.out.print("* "); এ line use করে ফলাফলে spacial any character দেখুন।। *(স্টার) এর যায়গায় যা দিবেন, তাই দেখতে পাবেন।।
         যেখানে printf কাজ করবে না, সেখানে print ব্যবহার করুন।।
-    
-    2নং সমীকরণে, space print করা হয়েছে,
-        Left-side যেকোন কিছু design করতে হলে, প্রথমে space print করতে হয়।।
      */
 }

@@ -5,32 +5,41 @@ public class C_programming_pattern {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        //X(cross) style pattern design column print------------------
+        //==================================
         int num, col, row;
-        System.out.print("Enter any number : ");  //Odd number type recommanded.
+        System.out.print("Enter any number : ");
         num = input.nextInt();
 
-        for (row = 1; row <= num; row++) {
+        for (row = num; row >= 1; row--) {
 
-            for (col = 1; col <= num; col++) {
-
-                if (row == col || row + col == num + 1) {
-                    System.out.printf("%d ", col % 2);  //--------(1)
-                } else {
-                    System.out.print(" ");
-                }
+            for (col = 1; col <= num - row; col++) {
+                System.out.print("  ");
+            }
+            for (col = 1; col <= 2 * row - 1; col++) {
+                System.out.printf("%c ", col + 64);  //----------(1)
             }
             System.out.println();
         }
-        //X(cross) style pattern design column print -------------------
+        //------------------------------------
+        for (row = 2; row <= num; row++) {
+
+            for (col = 1; col <= num - row; col++) {
+                System.out.print("  ");
+            }
+            for (col = 1; col <= 2 * row - 1; col++){ //----------(2)
+                System.out.printf("%c ", col + 64);   //----------(1)
+            }
+            System.out.println();
+        }
+        //================================== 
     }
 
     /*
-    উপরোক্ত code দ্বারা X(cross) style pattern design. করা হয়েছে।।
+    উপরোক্ত code দ্বারা Chair style pattern design. করা হয়েছে।।
+    => লক্ষ্য করলে দেখা যায়, পূর্বের প্রায় সকল pyramid কে ‍দুইবার ১নং সমীকরণ নামকরণ করা হয়েছে।।
+       সেই দুটি (for loop) condition-কে একসাথে control করা হয়েছে, ২নং সমীকরণে।।
     
-    Pattern মুলত C_Programming এর অংশ, যদিও এখানে java-তে code করা হয়েছে।।
-    এখানে row print করা হয়েছে, column print করতে চাইলে ১নং সমীকরণে row এর পরিবর্তে col লিখুন।।
-    
+    এখানে column print করা হয়েছে, row print করতে চাইলে ১নং সমীকরণে col এর পরিবর্তে row লিখুন।।
     ১নং সমীকরণে,
         System.out.printf("%d ", col); এ line use করে ফলাফলে number pattern দেখুন।।
         System.out.printf("%d ", col%2); এ line use করে ফলাফলে binary number দেখুন।।

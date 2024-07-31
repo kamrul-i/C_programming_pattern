@@ -5,24 +5,11 @@ public class C_programming_pattern {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        //==================================
+        //Even Diamond style ==================================
         int num, col, row;
         System.out.print("Enter any number : ");
         num = input.nextInt();
 
-        for (row = num; row >= 2; row--) {
-
-            for (col = 1; col <= num - row; col++) {
-                //System.out.print(" ");
-                System.out.print("  ");    //----------(2)
-            }
-            for (col = 1; col <= row; col++) {
-                //System.out.print("+ ");  //----------(1)
-                System.out.print(" $  ");  //----------(1)
-            }
-            System.out.println();
-        }
-        //--------------------------------
         for (row = 1; row <= num; row++) {
 
             for (col = 1; col <= num - row; col++) {
@@ -35,11 +22,24 @@ public class C_programming_pattern {
             }
             System.out.println();
         }
-        //==================================
+        //---------------------------------
+        for (row = num-1; row >= 1; row--) {
+
+            for (col = 1; col <= num - row; col++) {
+                //System.out.print(" ");
+                System.out.print("  ");    //----------(2)
+            }
+            for (col = 1; col <= row; col++) {
+                //System.out.print("+ ");  //----------(1)
+                System.out.print(" $  ");  //----------(1)
+            }
+            System.out.println();
+        }
+        //Even Diamond style ==================================
     }
 
     /*
-    উপরোক্ত code দ্বারা Chair style pattern design. করা হয়েছে।।
+    উপরোক্ত code দ্বারা Even Diamond style pattern design. করা হয়েছে।।
     => লক্ষ্য করলে দেখা যায়, প্রায় সকল pyramid প্রত্যেকটি row তার পরবর্তী row-তে দুটি করে input বাড়ে।। মানে row-এর input সংখ্যা বিজোড় হিসেবে বাড়তে থাকে।।
     => তবে, এখানে প্রত্যেকটি row তার পরবর্তী row-তে একটি করে input বাড়ে।। মানে row-এর input ক্রমিক সংখ্যা হিসেবে বাড়তে থাকে।।
        এটা মূলত, দুটি input-এর মাঝে একটি space print করে।। 

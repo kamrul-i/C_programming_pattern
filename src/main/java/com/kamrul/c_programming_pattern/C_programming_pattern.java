@@ -5,7 +5,7 @@ public class C_programming_pattern {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        //Even Diamond style ==================================
+        //Odd Diamond style ==================================
         int num, col, row;
         System.out.print("Enter any number : ");
         num = input.nextInt();
@@ -13,38 +13,34 @@ public class C_programming_pattern {
         for (row = 1; row <= num; row++) {
 
             for (col = 1; col <= num - row; col++) {
-                //System.out.print(" ");
-                System.out.print("  ");    //----------(2)
+                System.out.print("  "); //-------(3)
             }
-            for (col = 1; col <= row; col++) {
-                //System.out.print("# ");  //----------(1)
-                System.out.print(" %  ");  //----------(1)
+            for (col = 1; col <= 2 * row - 1; col++){ //---------(2)
+                System.out.printf("%d ", row % 2);   //----------(1)
             }
             System.out.println();
         }
-        //---------------------------------
+        //-------------------------------------
         for (row = num-1; row >= 1; row--) {
 
             for (col = 1; col <= num - row; col++) {
-                //System.out.print(" ");
-                System.out.print("  ");    //----------(2)
+                System.out.print("  "); //-------(3)
             }
-            for (col = 1; col <= row; col++) {
-                //System.out.print("+ ");  //----------(1)
-                System.out.print(" $  ");  //----------(1)
+            for (col = 1; col <= 2 * row - 1; col++) { //-------(2)
+                System.out.printf("%d ", row % 2);  //----------(1)
             }
             System.out.println();
         }
-        //Even Diamond style ==================================
+        //Odd Diamond style ==================================
     }
 
     /*
-    উপরোক্ত code দ্বারা Even Diamond style pattern design. করা হয়েছে।।
-    => লক্ষ্য করলে দেখা যায়, প্রায় সকল pyramid প্রত্যেকটি row তার পরবর্তী row-তে দুটি করে input বাড়ে।। মানে row-এর input সংখ্যা বিজোড় হিসেবে বাড়তে থাকে।।
-    => তবে, এখানে প্রত্যেকটি row তার পরবর্তী row-তে একটি করে input বাড়ে।। মানে row-এর input ক্রমিক সংখ্যা হিসেবে বাড়তে থাকে।।
-       এটা মূলত, দুটি input-এর মাঝে একটি space print করে।। 
+    উপরোক্ত code দ্বারা Odd Diamond style pattern design. করা হয়েছে।।
+    => লক্ষ্য করলে দেখা যায়, পূর্বের প্রায় সকল pyramid কে ‍দুইবার ১নং সমীকরণ নামকরণ করা হয়েছে।।
+       সেই দুটি (for loop) condition-কে একসাথে control করা হয়েছে, ২নং সমীকরণে।।
+    => লক্ষ্য করলে দেখা যায়, Odd pyramid গুলো প্রত্যেকটি row তার পরবর্তী row-তে দুটি করে input বাড়ে, মানে row-এর input সংখ্যা বিজোড় হসেবে বাড়তে থাকে।।
     
-    এখানে column print করা হয়েছে, row print করতে চাইলে ১নং সমীকরণে col এর পরিবর্তে row লিখুন।।
+    এখানে row print করা হয়েছে, column print করতে চাইলে ১নং সমীকরণে row এর পরিবর্তে col লিখুন।।
     ১নং সমীকরণে,
         System.out.printf("%d ", col); এ line use করে ফলাফলে number pattern দেখুন।।
         System.out.printf("%d ", col%2); এ line use করে ফলাফলে binary number দেখুন।।
@@ -53,7 +49,7 @@ public class C_programming_pattern {
         System.out.print("* "); এ line use করে ফলাফলে spacial any character দেখুন।। *(স্টার) এর যায়গায় যা দিবেন, তাই দেখতে পাবেন।।
         যেখানে printf কাজ করবে না, সেখানে print ব্যবহার করুন।।
 
-    2নং সমীকরণে, space print করা হয়েছে,
+    3নং সমীকরণে, space print করা হয়েছে,
         Left-side যেকোন কিছু design করতে হলে, প্রথমে space print করতে হবে।।
      */
 }
